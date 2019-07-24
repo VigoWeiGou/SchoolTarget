@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>学生成绩评估及查询</title>
+    <link rel="stylesheet" type="text/css" href="result.css"/>
+    <script src="js/prefixfree.min.js"></script>
+</head>
+<body>
+    <div class="all">
+    <!--页面头部-->
+    <div class="header">
+        <div class="img left">
+            <img src="imgs/logo.png" width=100px />
+        </div>
+        <div class="manus left">
+            <ul>
+                <li>
+                    <a   href="subjectManu.html">
+                        课程
+                    </a>
+                </li>
+                <li>
+                    <a href="studentQue.html">
+                        在线考试
+                    </a>
+                </li>
+                <li>
+                    <a class="now" href="#">
+                        成绩评估及查询
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        答题记录
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        收藏夹
+                    </a>
+                </li>                               
+                <li>
+                    <form>
+                        <select id="selection">
+                            <option value="sub">
+                                课程
+                            </option>
+                            <option value="test">
+                                试题
+                            </option>
+                        </select>
+                    </form>
+                </li>
+                <li>
+                    <input type="text" name="search" placeholder="搜索..."/>
+                </li>
+            </ul>
+        </div>
+        <div class="head">
+            <div class="img right">
+                <img src="imgs/default.png" width="30px"/>
+            </div>
+            <div class="number right">204******418</div>
+            <div class="manu">
+                <ul>
+                    <li>我的题库</li>
+                    <li>切换账号</li>
+                    <li>退出</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    </div>
+    <!--灰色部分-->
+    <div class="content">
+        <!--主要内容部分-->
+        <div class="main">
+            <div class="markBox">
+                <div class="mark">
+                    <p class="name">
+                        <span>张三</span>同学您好，本次成绩为：
+                    </p>
+                    <p class="num">
+                        <span>80</span>分
+                    </p>
+                </div>
+                <div class="button">
+                    <div class="history">
+                        <a href="marks.html">
+                            查看历史成绩
+                        </a>
+                    </div>
+                    <div class="analyze">
+                        <a href="viewData.html">
+                            查看成绩分析
+                        </a>
+                    </div>                   
+                </div>
+            </div> 
+            <div class="loadingBox">
+                <div id="loading">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <p>在线批卷，请稍等</p>
+                </div>
+            </div>       
+        </div>
+    </div>
+</body>
+</html>

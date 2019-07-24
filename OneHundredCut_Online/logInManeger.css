@@ -1,0 +1,226 @@
+/*消除默认样式*/
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    /* background: url(imgs/bg1.jpg) repeat fixed center; */
+    background-position: center top;
+    font-family: "微软雅黑";
+    overflow: hidden;
+}
+a{
+    text-decoration: none;
+}
+input{
+    background:none;
+    outline:none;  
+    border:0px;   
+}
+
+    
+/*轮播图*/
+.viewport{
+    overflow: hidden;
+}
+.wrap{
+    position: relative;
+    width: 400vw;
+    overflow: hidden;
+    animation: carousel linear 12s infinite 0s normal;
+}
+.wrap img{
+    display: inline-block;
+    width:100vw;
+    height: auto;
+    float: left;
+}
+@keyframes carousel{
+    0%{
+        left: 0;
+    }
+    25%{
+        left: -0vw;
+    }
+    25.1%{
+        left: -100vw;
+    }
+    50%{
+        left: -100vw;
+    }
+    50.1%{
+        left: -200vw;
+    }
+    75%{
+        left: -200vw;
+    }
+    75.1%{
+        left: -300vw;
+    }
+    100%{
+        left: -300vw;
+    }
+}
+    /*banner图文字统一样式*/
+.container p{
+    color: #fff;
+    /* text-align: center; */
+    font-size: 30px;
+    font-weight: bold;
+    margin-top: 30px;
+}
+    /*图1文字*/
+.container .txt1{
+    position: absolute;
+    top:200px;
+    left: 50%;
+    margin-left: -300px;   
+    animation: easeInAnimate 12s ease infinite; /*调用动画：动画名、时间、时间线条、播放次数*/
+    animation-fill-mode: forwards;/*定义动画结束的状态*/
+}
+    /*图2文字*/
+.container .txt2{
+    position: absolute;
+    top:450px;
+    left: 300px;
+    animation: easeInAnimate 12s ease 2.9s infinite; /*调用动画：动画名、时间、时间线条、播放次数*/
+    animation-fill-mode: forwards;/*定义动画结束的状态*/
+    opacity: 0;
+}
+    /*图3文字*/
+.txt3{
+    position: absolute;
+    top:200px;
+    left: 200px;
+    opacity: 0;
+    animation: easeInAnimate 12s ease 5.9s infinite; /*调用动画：动画名、时间、时间线条、播放次数*/
+    animation-fill-mode: forwards;/*定义动画结束的状态*/
+}
+    /*图4文字*/
+.txt4{
+    position: absolute;
+    top:250px;
+    left:200px;
+    font-size: 50px;
+    opacity: 0;
+    animation: easeInAnimate 12s ease 8.9s infinite; /*调用动画：动画名、时间、时间线条、播放次数*/
+    animation-fill-mode: forwards;/*定义动画结束的状态*/
+}
+@keyframes easeInAnimate{/*定义淡入文字的动画*/
+    0%{transform:translateX(10px);opacity: 0;}
+    10%{transform:translateX(0px);opacity: 1;}
+    25%{transform:translateX(0px);opacity: 1; }
+    30%{transform:translateX(10px);opacity: 0; }
+    100%{transform:translateX(10px);opacity: 0; }
+}
+
+/*登录框*/
+.container .logInBox{
+    position: absolute;
+    top:-50px;
+    right: 200px;
+    height:350px ;
+    width: 400px;
+    background-color: rgba(255,255,255,0.6);
+    margin: 200px auto 0;
+    padding-top:60px ;
+}
+.container .logInBox .icon{
+    position: absolute;
+    top:-50px;
+    left: 50%;
+    margin-left: -50px;
+    opacity: 0.8;
+}
+.container .logInBox .log{
+    width: 300px;
+    margin: 40px auto;
+    background: rgba(0,0,0,0.3);
+    color: #fff;
+    line-height: 30px;
+}
+.container .logInBox input{
+    width: 300px;
+    height: 32px;
+}
+.container .logInBox input:focus{
+    /* border: 1px rgb(210, 162, 250) solid; */
+    background-color: rgba(173, 163, 175, 0.3);
+}
+.container .logInBox input{
+    color: #fff;
+}
+.container .logInBox input::-webkit-input-placeholder {
+    color: #fff;
+}
+.container .logInBox .lossKey{
+    position: absolute;
+    top:220px;
+    right: 60px;
+    color: #666;
+    font-size: 14px;
+    cursor: pointer;
+}
+.container .logInBox .lossKey:hover{
+    border-bottom: 1px solid #999;
+}
+.container .logInBox .logIn{
+    position: absolute;
+    top:280px;
+    left: 50%;
+    margin-left: -151px;
+    height: 30px;
+    width: 300px;
+    display: inline-block;
+    background-color: rgba(155, 120, 177, 0.603);
+    border: 1px solid #fff;
+    line-height: 30px;
+    text-align: center;
+    cursor: pointer;
+}
+.container .logInBox .logIn a{
+    color: #fff;
+    font-size: 20px;
+}
+.container .logInBox .WClogIn{
+    position: absolute;
+    top:320px;
+    left: 50%;
+    margin-left: -151px;
+    height: 30px;
+    width: 300px;
+    display: inline-block;
+    background-color: rgba(255,255,255,0.8);
+    border: 1px solid rgb(229, 171, 243);
+    line-height: 30px;
+    text-align: center;
+    cursor: pointer;
+}
+.container .logInBox .WClogIn a{
+    color: rgb(182, 121, 240);
+    font-size: 18px;
+}
+.container .logInBox .register{
+    position: absolute;
+    bottom: 20px;
+    right: 60px;
+    color: #666;
+    font-size: 14px;
+    cursor: pointer;
+}
+.container .logInBox .register:hover{
+    border-bottom: 1px solid #666;
+}
+.container .logInBox .choose{
+    position: absolute;
+    bottom: 20px;
+    right: 140px;
+    font-size: 14px;
+    cursor: pointer;
+}
+.container .logInBox .choose a{
+    color: #666;
+}
+.container .logInBox .choose:hover{
+    border-bottom: 1px solid #666;
+}

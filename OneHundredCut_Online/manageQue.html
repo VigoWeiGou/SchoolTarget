@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>管理员题库管理</title>
+    <link rel="stylesheet" type="text/css" href="teacherQue.css"/>
+    
+    <!-- javascript -->
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+	<script type="text/javascript" src="js/jquery.tools.min.js"></script>
+	<script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
+
+</head>
+<body>
+
+	<script type="text/javascript">
+	
+		$(function() {
+			
+			var indicator = $('#indicator'),
+					indicatorHalfWidth = indicator.width()/2,
+					lis = $('#tabs').children('li');
+
+			$("#tabs").tabs("#content section", {
+				effect: 'fade',
+				fadeOutSpeed: 0,
+				fadeInSpeed: 400,
+				onBeforeClick: function(event, index) {
+					var li = lis.eq(index),
+					    newPos = li.position().left + (li.width()/2) - indicatorHalfWidth+35;
+					indicator.stop(true).animate({ left: newPos }, 600, 'easeInOutExpo');
+				}
+			});	
+
+		});
+
+	</script>
+
+
+    <!--页面头部-->
+    <div class="header">
+        <div class="img left">
+            <img src="imgs/logo.png" width=100px />
+        </div>
+        <div class="manus left">
+            <ul>
+                <li>
+                    <a  class="now" href="#">
+                        题库管理
+                    </a>
+                </li>
+                <li>
+                    <a href="manageMarks.html">
+                        成绩管理
+                    </a>
+                </li>
+                <li>
+                    <a  href="searchMana.html">
+                        基本资料管理和查询
+                    </a>
+                </li>
+                <li>
+                    <form>
+                        <select id="selection">
+                                <option value="sub">
+                                        课程
+                                    </option>
+                                    <option value="sub">
+                                        试题
+                                    </option>
+                                    <option value="sub">
+                                        学生数据
+                                    </option>
+                                    <option value="test">
+                                        教师数据
+                                    </option>
+                                </select>
+                    </form>
+                </li>
+                <li>
+                    <input type="text" name="search" placeholder="搜索..."/>
+                </li>
+            </ul>
+        </div>
+        <div class="head">
+            <div class="img right">
+                <img src="imgs/default.png" width="30px"/>
+            </div>
+            <div class="number right">欢迎管理员007</div>
+            <div class="manu">
+                <ul>
+                    <li><a href="#">我的题库</a></li>
+                    <li><a href="logInTeacher.html">切换账号</a></li>
+                    <li><a href="logInTeacher.html">退出</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--灰色部分-->
+    <div class="content">
+        <!--主要内容部分-->
+        <div class="main">
+	        <nav>		
+		        <ul id="tabs">
+			        <li><a class="current" href="#">选择题</a></li>
+			        <li><a href="#">填空题</a></li>
+                    <li><a href="#">判断题</a></li>
+                    <span>导入试题</span>
+		        </ul>
+		        <span id="indicator"></span>
+            </nav>
+            <div id="content">
+                <section>
+                    <ul>
+                        <li>
+                            <a class="title" href="#">全国计算机二级Access单项选择练习题(5)</a>
+                            <a href="#" class="cancel">删除</a><a href="#" class="change">修改</a>
+                        </li>
+                        <li>
+                            <a class="title" href="#">全国计算机二级Access单项选择练习题(4)</a>
+                            <a href="#" class="cancel">删除</a><a href="#" class="change">修改</a>
+                        </li>
+                        <li>
+                            <a class="title" href="#">全国计算机二级Access单项选择练习题(3)</a>
+                            <a href="#" class="cancel">删除</a><a href="#" class="change">修改</a>
+                        </li>
+                        <li>
+                            <a class="title" href="#">全国计算机二级Access单项选择练习题(2)</a>
+                            <a href="#" class="cancel">删除</a><a href="#" class="change">修改</a>
+                        </li>
+                        <li>
+                            <a class="title" href="#">全国计算机二级Access单项选择练习题(1)</a>
+                            <a href="#" class="cancel">删除</a><a href="#" class="change">修改</a>
+                        </li>
+                        <li>
+                            <a class="title" href="#">全国计算机二级Java上机操作练习题(5)</a>
+                            <a href="#" class="cancel">删除</a><a href="#" class="change">修改</a>
+                        </li>
+                        <li>
+                            <a class="title" href="#">全国计算机二级Java上机操作练习题(4)</a>
+                            <a href="#" class="cancel">删除</a><a href="#" class="change">修改</a>
+                        </li>
+                        <li>
+                            <a class="title" href="#">全国计算机二级Java上机操作练习题(3)</a>
+                            <a href="#" class="cancel">删除</a><a href="#" class="change">修改</a>
+                        </li>
+                        <li>
+                            <a class="title" href="#">全国计算机二级Java上机操作练习题(2)</a>
+                            <a href="#" class="cancel">删除</a><a href="#" class="change">修改</a>
+                        </li>
+                        <li>
+                            <a class="title" href="#">全国计算机二级Java上机操作练习题(1)</a>
+                            <a href="#" class="cancel">删除</a><a href="#" class="change">修改</a>
+                        </li>
+                        <li>
+                            <a class="title" href="#">全国计算机二级Access单项选择练习题(5)</a>
+                            <a href="#" class="cancel">删除</a><a href="#" class="change">修改</a>
+                        </li>
+                        <li>
+                            <a class="title" href="#">全国计算机二级Access单项选择练习题(4)</a>
+                            <a href="#" class="cancel">删除</a><a href="#" class="change">修改</a>
+                        </li>
+                    </ul>
+                </section>
+                <section>
+                    <ul>
+                        <li>
+                            <a class="title" href="#">全国计算机二级Visual Basic上机操作练习题(4)</a>
+                            <a href="#" class="cancel">删除</a><a href="#" class="change">修改</a>
+                        </li>
+                        <li>
+                            <a class="title" href="#">全国计算机二级Visual Basic上机操作练习题(3)</a>
+                            <a href="#" class="cancel">删除</a><a href="#" class="change">修改</a>
+                        </li>
+                        <li>
+                            <a class="title" href="#">全国计算机二级Visual Basic上机操作练习题(2)</a>
+                            <a href="#" class="cancel">删除</a><a href="#" class="change">修改</a>
+                        </li>
+                        <li>
+                            <a class="title" href="#">全国计算机二级Visual Basic上机操作练习题(1)</a>
+                            <a href="#" class="cancel">删除</a><a href="#" class="change">修改</a>
+                        </li>
+                        <li>
+                            <a class="title" href="#">计算机二级MySQL数据库简答题(1)</a>
+                            <a href="#" class="cancel">删除</a><a href="#" class="change">修改</a>
+                        </li>
+                        <li>
+                            <a class="title" href="#">计算机等级考试二级Web练习题(1)</a>
+                            <a href="#" class="cancel">删除</a><a href="#" class="change">修改</a>
+                        </li>
+                        <li>
+                            <a class="title" href="#">计算机等级考试二级Web练习题(2)</a>
+                            <a href="#" class="cancel">删除</a><a href="#" class="change">修改</a>
+                        </li>
+                        <li>
+                            <a class="title" href="#">计算机等级考试二级Web练习题(3)</a>
+                            <a href="#" class="cancel">删除</a><a href="#" class="change">修改</a>
+                        </li>
+                        <li>
+                            <a class="title" href="#">计算机等级考试二级Web练习题(4)</a>
+                            <a href="#" class="cancel">删除</a><a href="#" class="change">修改</a>
+                        </li>
+                        <li>
+                            <a class="title" href="#">2019年计算机二级题库及答案(2)</a>
+                            <a href="#" class="cancel">删除</a><a href="#" class="change">修改</a>
+                        </li>
+                        <li>
+                            <a class="title" href="#">2019年计算机二级题库及答案(1)</a>
+                            <a href="#" class="cancel">删除</a><a href="#" class="change">修改</a>
+                        </li>
+                        <li>
+                            <a class="title last" href="#">全国计算机二级Visual Basic上机操作练习题(4)</a>
+                            <a href="#" class="cancel">删除</a><a href="#" class="change">修改</a>
+                        </li>
+                    </ul>
+                </section>
+                <section>
+                    <ul>
+                        <li>
+                            <a class="title" href="#">2014年9月计算机一级《MS Office应用》真题及答案讲解</a>
+                            <a href="#" class="cancel">删除</a><a href="#" class="change">修改</a>
+                        </li>
+                        <li>
+                            <a class="title" href="#">计算机一级选择题答案解析(1)</a>
+                            <a href="#" class="cancel">删除</a><a href="#" class="change">修改</a>
+                        </li>
+                        <li>
+                            <a class="title" href="#">全国计算机一级MS Office考试试题(1)</a>
+                            <a href="#" class="cancel">删除</a><a href="#" class="change">修改</a>
+                        </li>
+                        <li>
+                            <a class="title" href="#">全国计算机一级考试模拟试题及答案(1)</a>
+                            <a href="#" class="cancel">删除</a><a href="#" class="change">修改</a>
+                        </li>
+                        <li>
+                            <a class="title" href="#">计算机理论考试试题及答案(1)</a>
+                            <a href="#" class="cancel">删除</a><a href="#" class="change">修改</a>
+                        </li>
+                        <li>
+                            <a class="title" href="#">计算机初级理论知识试卷(1)</a>
+                            <a href="#" class="cancel">删除</a><a href="#" class="change">修改</a>
+                        </li>
+                        <li>
+                            <a class="title" href="#">计算机一级考试题库及答案(1)</a>
+                            <a href="#" class="cancel">删除</a><a href="#" class="change">修改</a>
+                        </li>
+                        <li>
+                            <a class="title" href="#">计算机一级等级考试选择题汇总精选(1)</a>
+                            <a href="#" class="cancel">删除</a><a href="#" class="change">修改</a>
+                        </li>
+                        <li>
+                            <a class="title" href="#">计算机一级MS Office单选题复习题及答案(1)</a>
+                            <a href="#" class="cancel">删除</a><a href="#" class="change">修改</a>
+                        </li>
+                        <li>
+                            <a class="title" href="#">2014年9月计算机一级《MS Office应用》真题及答案讲解</a>
+                            <a href="#" class="cancel">删除</a><a href="#" class="change">修改</a>
+                        </li>
+                        <li>
+                            <a class="title" href="#">计算机一级选择题答案解析(1)</a>
+                            <a href="#" class="cancel">删除</a><a href="#" class="change">修改</a>
+                        </li>
+                        <li>
+                            <a class="title last" href="#">全国计算机一级MS Office考试试题(1)</a>
+                            <a href="#" class="cancel">删除</a><a href="#" class="change">修改</a>
+                        </li>
+                    </ul>
+                </section>
+            </div>
+        </div>
+        <div class="tag">
+            <ul>
+                <li>&lt;</li>
+                <li class="now">1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+                <li>5</li>
+                <li>&gt;</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,72 @@
+/*消除默认样式*/
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    background: url(imgs/bg1.jpg) repeat fixed center;
+    background-position: center top;
+    font-family: "微软雅黑";
+    position: relative;
+    overflow: hidden;
+}
+a{
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/*幕布*/
+.curtain{
+    position: absolute;
+    top:0;
+    left: 0;
+    margin-left: 0px;
+    width: 100vw;
+    height: 100vw;
+    width: 100%;
+    background: url(imgs/Face.jpg) ;
+    background-size: contain;
+    z-index: 2;
+    animation: curtain 1s 2s forwards;
+}
+@keyframes curtain{
+    0%{opacity: 1;}
+    99.9%{opacity: 0;top:0;}
+    100%{top:2000px}
+}
+
+
+/*内容*/
+.container .selectButton{
+    height: 250px;
+    width: 850px;
+    overflow: hidden;
+    position: absolute;
+    top:250px;
+    left: 50%;
+    margin-left: -400px;
+}
+.container .selectButton .button{
+    /* float:left; */
+    display: inline-block;
+    height: 200px;
+    width: 200px;
+    border-radius: 10px;
+    text-align: center;
+    line-height: 200px;
+    color: #fff;
+    font-size: 24px;
+    box-shadow: 10px 10px 10px  rgba(0, 0, 0, 0.6);
+}
+.container .selectButton .teacher{
+    background-color: rgba(235, 194, 248, 0.8);
+    margin-right: 100px;
+
+}
+.container .selectButton .student{
+    background-color: rgba(247, 185, 185, 0.8);
+    margin-right: 100px;
+}
+.container .selectButton .manager{
+    background-color: rgba(194, 165, 248, 0.8);
+}

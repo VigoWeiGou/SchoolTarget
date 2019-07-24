@@ -1,0 +1,246 @@
+
+*{
+    padding:0;
+    margin: 0;
+}
+ul{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+/*页面头部*/
+.header{
+    width: 100%;
+    /* overflow: hidden; */
+}
+.header .left{
+    float: left;
+}
+.header .img{
+    margin-left:100px;
+    height: 80.5px;
+    line-height: 80.5px;
+}
+.header .img img{
+    vertical-align: middle;
+}
+.header .manus{
+    margin: 10px 100px;
+    font-family: "楷书";
+}
+.header .manus a{
+    color: #333;
+    font-size: 18px;
+    padding:10px;
+
+}
+.header .manus li{
+    float: left;
+    margin-right: 10px;
+    line-height: 60px;
+}
+.header .manus a:hover{
+    color: #6e75ef;
+}
+.header .manus .now{
+    color: #6e75ef;
+    border-bottom: #6e75ef 3px solid;
+}
+.header .manus select{
+    appearance: none;
+    width: 100%;
+    padding: 5px 10px;
+    border: none;
+    outline: none;
+    text-align: center;
+    cursor: pointer;
+}
+.header .manus input{
+    width: 100px;
+    padding: 5px 10px;
+    outline: none;
+    border-radius: 8px;
+}
+.header .head{
+    position: relative;
+    float: right;
+    display: inline-block;
+    margin-right: 100px;
+    font-size: 14px;
+    color: #666;
+    cursor: pointer;
+}
+.header .right{
+    float: left;
+    margin-left: 20px;
+    line-height: 80.5px;
+}
+.header .head .manu{
+    position: absolute;
+    top:60px;
+    left: 30px;
+    display: none;
+    width: 80px;
+    border: rgb(214, 211, 211) 1px solid;
+    border-radius: 8px;
+    background-color: #fff;
+    font-size: 14px;
+    z-index: 3;
+}
+.header .head .manu li a{
+    display: inline-block;
+    border-bottom: 1px solid rgb(214, 211, 211);
+    padding: 10px 5px;
+    text-align: center;
+    color: #666;
+    cursor: pointer;
+}
+.header .head .manu li a:hover{
+    color: #6e75ef;
+}
+.header .head:hover .manu{
+    display: block;
+}
+
+
+/*主内容部分*/
+.content{
+    overflow: hidden;
+    width: 100%;
+    background-color: rgb(240, 240, 240);
+}
+.content .main{
+    position: relative;
+    overflow: hidden;
+    margin:50px auto ;
+    padding:20px 10px 50px;
+    width: 996px;
+    color: #666;
+    font-size: 16px;
+    background-color: #fff;
+    /* text-align: center; */
+}
+/* Navigation */
+nav {
+	margin-bottom: 30px;
+	position: relative;
+}
+
+nav ul {
+	overflow: hidden;
+	padding-bottom: 10px;
+    border-bottom: 5px solid #bbb;
+}
+
+nav li {
+	float: left;
+	margin-left: 35px;
+}
+
+nav li a {
+	color: #666;
+	font-weight: bold;
+}
+
+nav li a:hover,
+nav li a:focus,
+nav li a.current {
+	color: rgb(151, 144, 253);
+}
+nav span{
+    float: right;
+    color: #999;
+    font-size: 14px;
+    margin-right: 30px;
+    cursor: pointer;
+}
+nav span:hover{
+    border-bottom: 1px solid #999;
+}
+nav #indicator {
+	position: absolute;
+	left: 15px;
+	bottom: 5px;
+	width: 12px;
+	height: 7px;
+	background-image: url(img/notch.png);
+}
+#content{
+    position: relative;
+    margin:0 30px;
+}
+.main #content li{
+    padding: 10px 0;
+    border-bottom: 1px solid rgb(212, 212, 212);
+}
+.main #content li:hover{
+    background-color: rgb(240, 240, 240);
+}
+.main #content li .title:hover{
+    color: rgb(151, 144, 253);
+}
+.main #content li .title{
+    color: #333;
+}
+.change{
+    float: right;
+    padding: 5px 15px;
+    margin-right: 30px;
+    border-radius: 8px;
+    background-color: rgb(192, 192, 192);
+    color: #fff;
+}
+.change:hover{
+    box-shadow: 1px 1px 1px 1px #999;
+}
+.cancel{
+    float: right;
+    padding: 5px 15px;
+    margin-right: 30px;
+    border-radius: 8px;
+    background-color: rgb(255, 109, 109);
+    color: #fff;
+}
+.cancel:hover{
+    box-shadow: 1px 1px 1px 1px #999;
+}
+.last{
+    position: relative;
+}
+.tag{
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    margin-left: -66px;
+}
+.tag li{
+    float: left;
+    margin-right: 10px;
+    color: #666;
+    font-size: 14px;
+    cursor: pointer;
+}
+.tag li:hover{
+    color: #6e75ef;
+    border-bottom: 1px solid #6e75ef ;
+}
+.tag .now{
+    color: #6e75ef;
+    border-bottom: 1px solid #6e75ef ;
+}
+
+
+
+
+/* Content */
+
+#content section {
+	display: none;
+}
+
+#content p {
+	margin-bottom: 1em;
+	max-width: 50em;
+	line-height: 1.6;
+}

@@ -1,0 +1,651 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html;charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>学生在线考试</title>
+<link href="main.css" rel="stylesheet" type="text/css">
+<link href="iconfont.css" rel="stylesheet" type="text/css">
+<link href="test.css" rel="stylesheet" type="text/css">
+
+<link href="file://" rel="stylesheet" type="text/css">
+<script src="http://how2j.cn/study/js/jquery/2.0.0/jquery.min.js"></script>
+<link href="http://how2j.cn/study/css/bootstrap/3.3.6/bootstrap.min.css" rel="stylesheet">
+<script src="http://how2j.cn/study/js/bootstrap/3.3.6/bootstrap.min.js"></script>
+<script>
+var m = 60;  //设置分
+var s = 1;    //设置秒
+function showtime(){
+    document.getElementById('m').innerHTML = m;
+    document.getElementById('s').innerHTML = s;
+    s = s-1;
+    if(s==0){
+        m = m -1;
+        s = 60
+    } 
+    if(m<0 && s==60){
+        clearInterval(settime);
+    }
+}
+clearInterval(settime);
+var settime = setInterval(function(){
+    showtime();
+},1000);
+</script>
+</head>
+
+<body>
+<body>
+	<div class="main">
+		<!--nr start-->
+		<div class="test_main">
+			<div class="nr_left">
+				<div class="test">
+					<form action="" method="post">
+						<div class="progress" style="position:absolute; top:0;left:50%;margin-left: -508px; width: 898px; background-color: rgb(219, 219, 219);">
+                        	<div class="progress-bar" style="width: 10%; background-color: #6e75ef; min-width: 2em;" >
+    							10%
+  							</div>
+						</div>
+						<div class="counter"> 
+							<div class="clock">
+								<img src="imgs/clock.png" width="150px">
+							</div>
+							<span>倒计时：</span><span id="m"></span><span>分</span>  <span id="s"></span><span>秒</span>
+							<div class="button">暂停做题</div>
+							<div class="button">下次做</div>
+						</div>
+						<div class="test_title">
+							<font>
+								<a href="result.html">
+									<input type="button" name="test_jiaojuan" value="交卷">
+								</a>
+							</font>
+						</div>
+						
+							<div class="test_content">
+								<div class="test_content_title">
+									<h2>全国计算机二级Access单项选择练习题(5)</h2>
+									<p>
+										<span>共</span><i class="content_lit">10</i><span>题，</span><span>合计</span><i class="content_fs">100</i><span>分</span>
+									</p>
+								</div>
+							</div>
+							<div class="test_content_nr">
+								<ul>
+									
+
+											<li id="qu_0_0">
+											<div class="test_content_nr_tt">
+												<span>第一题</span><font>计算机网络使用范围划分为()</font>
+											</div>
+
+											<div class="test_content_nr_main">
+												<ul>
+													
+														<li class="option">
+															
+																<input type="radio" class="radioOrCheck" name="answer1" id="0_answer_1_option_1">
+															
+															
+															<label for="0_answer_1_option_1">
+																A.
+																<p class="ue" style="display: inline;">广域网，局域网</p>
+															</label>
+														</li>
+													
+														<li class="option">
+															
+																<input type="radio" class="radioOrCheck" name="answer1" id="0_answer_1_option_2">
+															
+															
+															<label for="0_answer_1_option_2">
+																B.
+																<p class="ue" style="display: inline;">专用网，公用网</p>
+															</label>
+														</li>
+													
+														<li class="option">
+															
+																<input type="radio" class="radioOrCheck" name="answer1" id="0_answer_1_option_3">
+															
+															
+															<label for="0_answer_1_option_3">
+																C.
+																<p class="ue" style="display: inline;">低速网，高速网</p>
+															</label>
+														</li>
+													
+														<li class="option">
+															
+																<input type="radio" class="radioOrCheck" name="answer1" id="0_answer_1_option_4">
+															
+															
+															<label for="0_answer_1_option_4">
+																D.
+																<p class="ue" style="display: inline;">部门网，公用网</p>
+															</label>
+														</li>
+													
+												</ul>
+											</div>
+										</li>
+														
+														<li id="qu_0_1">
+														<div class="test_content_nr_tt">
+												<span>第二题</span><font>能直接与CPU交换信息的存储器是()</font>
+											</div>
+
+											<div class="test_content_nr_main">
+												<ul>
+													
+														<li class="option">
+															
+																<input type="radio" class="radioOrCheck" name="answer2" id="0_answer_2_option_1">
+															
+															
+															<label for="0_answer_2_option_1">
+																A.
+																<p class="ue" style="display: inline;">硬盘</p>
+															</label>
+														</li>
+													
+														<li class="option">
+															
+																<input type="radio" class="radioOrCheck" name="answer2" id="0_answer_2_option_2">
+															
+															
+															<label for="0_answer_2_option_2">
+																B.
+																<p class="ue" style="display: inline;">处理器</p>
+															</label>
+														</li>
+													
+														<li class="option">
+															
+																<input type="radio" class="radioOrCheck" name="answer2" id="0_answer_2_option_3">
+															
+															
+															<label for="0_answer_2_option_3">
+																C.
+																<p class="ue" style="display: inline;">内存</p>
+															</label>
+														</li>
+													
+														<li class="option">
+															
+																<input type="radio" class="radioOrCheck" name="answer2" id="0_answer_2_option_4">
+															
+															
+															<label for="0_answer_2_option_4">
+																D.
+																<p class="ue" style="display: inline;">网卡</p>
+															</label>
+														</li>
+													
+												</ul>
+											</div>
+										</li>
+										
+										<li id="qu_0_2">
+										<div class="test_content_nr_tt">
+												<span>第三题</span><font>通常所说的CPU芯片包括( )</font>
+											</div>
+
+											<div class="test_content_nr_main">
+												<ul>
+													
+														<li class="option">
+															
+																<input type="radio" class="radioOrCheck" name="answer3" id="0_answer_3_option_1">
+															
+															
+															<label for="0_answer_3_option_1">
+																A.
+																<p class="ue" style="display: inline;">控制器、运算器和寄存器组</p>
+															</label>
+														</li>
+													
+														<li class="option">
+															
+																<input type="radio" class="radioOrCheck" name="answer3" id="0_answer_3_option_2">
+															
+															
+															<label for="0_answer_3_option_2">
+																B.
+																<p class="ue" style="display: inline;">控制器、运算器和内存储器</p>
+															</label>
+														</li>
+													
+														<li class="option">
+															
+																<input type="radio" class="radioOrCheck" name="answer3" id="0_answer_3_option_3">
+															
+															
+															<label for="0_answer_3_option_3">
+																C.
+																<p class="ue" style="display: inline;">内存储器和运算器</p>
+															</label>
+														</li>
+													
+														<li class="option">
+															
+																<input type="radio" class="radioOrCheck" name="answer3" id="0_answer_3_option_4">
+															
+															
+															<label for="0_answer_3_option_4">
+																D.
+																<p class="ue" style="display: inline;">控制器和内存储器</p>
+															</label>
+														</li>
+													
+												</ul>
+											</div>
+										</li>
+										
+									<div class="test_content_nr_tt">
+												<span>第四题</span><font>在内存中，每个基本单位都被赋予一个惟一的序号，这个序号称为( )</font>
+											</div>
+
+											<div class="test_content_nr_main">
+												<ul>
+													
+														<li class="option">
+															
+																<input type="radio" class="radioOrCheck" name="answer4" id="0_answer_4_option_1">
+															
+															
+															<label for="0_answer_4_option_1">
+																A.
+																<p class="ue" style="display: inline;">字节</p>
+															</label>
+														</li>
+													
+														<li class="option">
+															
+																<input type="radio" class="radioOrCheck" name="answer4" id="0_answer_4_option_2">
+															
+															
+															<label for="0_answer_4_option_2">
+																B.
+																<p class="ue" style="display: inline;">编号</p>
+															</label>
+														</li>
+													
+														<li class="option">
+															
+																<input type="radio" class="radioOrCheck" name="answer4" id="0_answer_4_option_3">
+															
+															
+															<label for="0_answer_4_option_3">
+																C.
+																<p class="ue" style="display: inline;">地址</p>
+															</label>
+														</li>
+													
+														<li class="option">
+															
+																<input type="radio" class="radioOrCheck" name="answer4" id="0_answer_4_option_4">
+															
+															
+															<label for="0_answer_4_option_4">
+																D.
+																<p class="ue" style="display: inline;">容量</p>
+															</label>
+														</li>
+													
+												</ul>
+											</div>
+										</li>
+										
+										<div class="test_content_nr_tt">
+												<span>第五题</span><font>在不同的计算机中，字节的长度是固定不变的。设计算机的字长是4B，那么意味着( )</font>
+											</div>
+
+											<div class="test_content_nr_main">
+												<ul>
+													
+														<li class="option">
+															
+																<input type="radio" class="radioOrCheck" name="answer5" id="0_answer_5_option_1">
+															
+															
+															<label for="0_answer_5_option_1">
+																A.
+																<p class="ue" style="display: inline;">该机最长可使用4B的字符串</p>
+															</label>
+														</li>
+													
+														<li class="option">
+															
+																<input type="radio" class="radioOrCheck" name="answer5" id="0_answer_5_option_2">
+															
+															
+															<label for="0_answer_5_option_2">
+																B.
+																<p class="ue" style="display: inline;">该机在CPU中一次可以处理32位</p>
+															</label>
+														</li>
+													
+														<li class="option">
+															
+																<input type="radio" class="radioOrCheck" name="answer5" id="0_answer_5_option_3">
+															
+															
+															<label for="0_answer_5_option_3">
+																C.
+																<p class="ue" style="display: inline;">CPU可以处理的最大数是24户</p>
+															</label>
+														</li>
+													
+														<li class="option">
+															
+																<input type="radio" class="radioOrCheck" name="answer5" id="0_answer_5_option_4">
+															
+															
+															<label for="0_answer_5_option_4">
+																D.
+																<p class="ue" style="display: inline;">该机以4个字节为1个单位将信息存放在软盘上</p>
+															</label>
+														</li>
+													
+												</ul>
+											</div>
+										</li>
+										
+										<div class="test_content_nr_tt">
+												<span>第六题</span><font>CPU的主要功能是进行( )</font>
+											</div>
+
+											<div class="test_content_nr_main">
+												<ul>
+													
+														<li class="option">
+															
+																<input type="radio" class="radioOrCheck" name="answer6" id="0_answer_6_option_1">
+															
+															
+															<label for="0_answer_6_option_1">
+																A.
+																<p class="ue" style="display: inline;">算术运算</p>
+															</label>
+														</li>
+													
+														<li class="option">
+															
+																<input type="radio" class="radioOrCheck" name="answer6" id="0_answer_6_option_2">
+															
+															
+															<label for="0_answer_6_option_2">
+																B.
+																<p class="ue" style="display: inline;">逻辑运算</p>
+															</label>
+														</li>
+													
+														<li class="option">
+															
+																<input type="radio" class="radioOrCheck" name="answer6" id="0_answer_6_option_3">
+															
+															
+															<label for="0_answer_6_option_3">
+																C.
+																<p class="ue" style="display: inline;">算术逻辑运算</p>
+															</label>
+														</li>
+													
+														<li class="option">
+															
+																<input type="radio" class="radioOrCheck" name="answer6" id="0_answer_6_option_4">
+															
+															
+															<label for="0_answer_6_option_4">
+																D.
+																<p class="ue" style="display: inline;">算术逻辑运算与全机的控制</p>
+															</label>
+														</li>
+													
+												</ul>
+											</div>
+										</li>
+										
+										<div class="test_content_nr_tt">
+												<span>第七题</span><font>下列叙述正确的是( )</font>
+											</div>
+
+											<div class="test_content_nr_main">
+												<ul>
+													
+														<li class="option">
+															
+																<input type="radio" class="radioOrCheck" name="answer7" id="0_answer_7_option_1">
+															
+															
+															<label for="0_answer_7_option_1">
+																A.
+																<p class="ue" style="display: inline;">指令中操作数规定准备招待的功能</p>
+															</label>
+														</li>
+													
+														<li class="option">
+															
+																<input type="radio" class="radioOrCheck" name="answer7" id="0_answer_7_option_2">
+															
+															
+															<label for="0_answer_7_option_2">
+																B.
+																<p class="ue" style="display: inline;">断开电源后，内存中的内容便会丢失</p>
+															</label>
+														</li>
+													
+														<li class="option">
+															
+																<input type="radio" class="radioOrCheck" name="answer7" id="0_answer_7_option_3">
+															
+															
+															<label for="0_answer_7_option_3">
+																C.
+																<p class="ue" style="display: inline;">在16位计算机中，一个字节由16位组成</p>
+															</label>
+														</li>
+													
+														<li class="option">
+															
+																<input type="radio" class="radioOrCheck" name="answer7" id="0_answer_7_option_4">
+															
+															
+															<label for="0_answer_7_option_4">
+																D.
+																<p class="ue" style="display: inline;">软盘驱动器属于主机，软盘属于外设</p>
+															</label>
+														</li>
+													
+												</ul>
+											</div>
+										</li>
+										
+										<div class="test_content_nr_tt">
+												<span>第八题</span><font>某单位的人事管理程序属于()</font>
+											</div>
+
+											<div class="test_content_nr_main">
+												<ul>
+													
+														<li class="option">
+															
+																<input type="radio" class="radioOrCheck" name="answer8" id="0_answer_8_option_1">
+															
+															
+															<label for="0_answer_8_option_1">
+																A.
+																<p class="ue" style="display: inline;">系统程序</p>
+															</label>
+														</li>
+													
+														<li class="option">
+															
+																<input type="radio" class="radioOrCheck" name="answer8" id="0_answer_8_option_2">
+															
+															
+															<label for="0_answer_8_option_2">
+																B.
+																<p class="ue" style="display: inline;">系统软件</p>
+															</label>
+														</li>
+													
+														<li class="option">
+															
+																<input type="radio" class="radioOrCheck" name="answer8" id="0_answer_8_option_3">
+															
+															
+															<label for="0_answer_8_option_3">
+																C.
+																<p class="ue" style="display: inline;">应用软件</p>
+															</label>
+														</li>
+													
+														<li class="option">
+															
+																<input type="radio" class="radioOrCheck" name="answer8" id="0_answer_8_option_4">
+															
+															
+															<label for="0_answer_8_option_4">
+																D.
+																<p class="ue" style="display: inline;">目标软件</p>
+															</label>
+														</li>
+													
+												</ul>
+											</div>
+										</li>
+										
+										<div class="test_content_nr_tt">
+												<span>第九题</span><font>冯•诺依曼结构计算机的五大基本构件包括运算器、存储器、输入设备、输出设备和()</font>
+											</div>
+
+											<div class="test_content_nr_main">
+												<ul>
+													
+														<li class="option">
+															
+																<input type="radio" class="radioOrCheck" name="answer9" id="0_answer_9_option_1">
+															
+															
+															<label for="0_answer_9_option_1">
+																A.
+																<p class="ue" style="display: inline;">显示器</p>
+															</label>
+														</li>
+													
+														<li class="option">
+															
+																<input type="radio" class="radioOrCheck" name="answer9" id="0_answer_9_option_2">
+															
+															
+															<label for="0_answer_9_option_2">
+																B.
+																<p class="ue" style="display: inline;">控制器</p>
+															</label>
+														</li>
+													
+														<li class="option">
+															
+																<input type="radio" class="radioOrCheck" name="answer9" id="0_answer_9_option_3">
+															
+															
+															<label for="0_answer_9_option_3">
+																C.
+																<p class="ue" style="display: inline;">硬盘存储器</p>
+															</label>
+														</li>
+													
+														<li class="option">
+															
+																<input type="radio" class="radioOrCheck" name="answer9" id="0_answer_9_option_4">
+															
+															
+															<label for="0_answer_9_option_4">
+																D.
+																<p class="ue" style="display: inline;">鼠标器</p>
+															</label>
+														</li>
+													
+												</ul>
+											</div>
+										</li>
+										
+										<div class="test_content_nr_tt">
+												<span>第十题</span><font>屏幕保护程序的主要作用是_()</font>
+											</div>
+
+											<div class="test_content_nr_main">
+												<ul>
+													
+														<li class="option">
+															
+																<input type="radio" class="radioOrCheck" name="answer10" id="0_answer_10_option_1">
+															
+															
+															<label for="0_answer_10_option_1">
+																A.
+																<p class="ue" style="display: inline;">保护计算机系统的显示器</p>
+															</label>
+														</li>
+													
+														<li class="option">
+															
+																<input type="radio" class="radioOrCheck" name="answer10" id="0_answer_10_option_2">
+															
+															
+															<label for="0_answer_10_option_2">
+																B.
+																<p class="ue" style="display: inline;">保护用户的身体</p>
+															</label>
+														</li>
+													
+														<li class="option">
+															
+																<input type="radio" class="radioOrCheck" name="answer10" id="0_answer_10_option_3">
+															
+															
+															<label for="0_answer_10_option_3">
+																C.
+																<p class="ue" style="display: inline;">保护用户的眼睛</p>
+															</label>
+														</li>
+													
+														<li class="option">
+															
+																<input type="radio" class="radioOrCheck" name="answer10" id="0_answer_10_option_4">
+															
+															
+															<label for="0_answer_10_option_4">
+																D.
+																<p class="ue" style="display: inline;">减低能耗</p>
+															</label>
+														</li>
+<div class="down"></div>
+												</ul>
+											</div>
+										</li>
+													
+													
+													
+													
+													
+													
+												</ul>
+											</div>
+										</li>
+</ul>
+											</div>
+										</li>
+									
+								</ul>
+							</div>
+						
+					</form>
+				</div>
+
+			</div>
+</body>
+</html>

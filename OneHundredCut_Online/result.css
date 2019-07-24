@@ -1,0 +1,225 @@
+*{
+    padding:0;
+    margin: 0;
+}
+ul{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+/*页面头部*/
+.header{
+    width: 100%;
+    /* overflow: hidden; */
+}
+.header .left{
+    float: left;
+}
+.header .img{
+    margin-left:100px;
+    height: 80.5px;
+    line-height: 80.5px;
+}
+.header .img img{
+    vertical-align: middle;
+}
+.header .manus{
+    margin: 10px 100px;
+    font-family: "楷书";
+}
+.header .manus a{
+    color: #333;
+    font-size: 18px;
+    padding:10px;
+
+}
+.header .manus li{
+    float: left;
+    margin-right: 10px;
+    line-height: 60px;
+}
+.header .manus a:hover{
+    color: #6e75ef;
+}
+.header .manus .now{
+    color: #6e75ef;
+    border-bottom: #6e75ef 3px solid;
+}
+.header .manus select{
+    appearance: none;
+    width: 100%;
+    padding: 5px 10px;
+    border: none;
+    outline: none;
+    text-align: center;
+    cursor: pointer;
+}
+.header .manus input{
+    width: 100px;
+    padding: 5px 10px;
+    outline: none;
+    border-radius: 8px;
+}
+.header .head{
+    position: relative;
+    float: right;
+    display: inline-block;
+    margin-right: 100px;
+    font-size: 14px;
+    color: #666;
+    cursor: pointer;
+}
+.header .right{
+    float: left;
+    margin-left: 20px;
+    line-height: 80.5px;
+}
+.header .head .manu{
+    position: absolute;
+    top:60px;
+    left: 30px;
+    display: none;
+    width: 80px;
+    border: rgb(214, 211, 211) 1px solid;
+    border-radius: 8px;
+    background-color: #fff;
+    color: #666;
+    font-size: 14px;
+}
+.header .head .manu li{
+    border-bottom: 1px solid rgb(214, 211, 211);
+    padding: 10px 5px;
+    text-align: center;
+    cursor: pointer;
+}
+.header .head .manu li:hover{
+    color: #6e75ef;
+}
+.header .head:hover .manu{
+    display: block;
+}
+
+
+/*主内容部分*/
+.content{
+    overflow: hidden;
+    width: 100%;
+    background-color: rgb(240, 240, 240);
+}
+.content .main{
+    position: relative;
+    overflow: hidden;
+    margin:0 auto 100px;
+    width: 996px;
+    height: 570px;
+    color: #666;
+    font-size: 16px;
+    text-align: center;
+}
+.content .main .markBox{
+    position: absolute;
+    top:100px;
+    left: 50%;
+    margin-left: -250px;
+    width: 500px;
+    height: 300px;
+    padding: 40px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 4px 4px 4px 4px rgba(0,0,0,0.4);
+    color: #333;
+    font-size: 20px;
+}
+.content  .main .markBox .mark .name{
+    text-align: left;
+}
+.content  .main .markBox .mark .name span{
+    margin-right: 10px;
+    font-size: 22px;
+    border-bottom: 1px solid #333;
+}
+.content  .main .markBox .mark .num {
+    margin-top: 60px;
+    text-align: center;
+}
+.content  .main .markBox .mark .num span {
+    color: red;
+    font-size: 40px;
+    margin-right: 20px;
+}
+.content .main .markBox .button {
+    position: absolute;
+    bottom:100px;
+    left: 50%;
+    margin-left: -131px;
+}
+.content .main .markBox .button div{
+    float: left;
+    padding: 5px 10px;
+    border-radius: 8px;
+    background-color: #6e75ef;
+    box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.2);
+}
+.content .main .markBox .button .history{
+    margin-right: 30px;
+}
+.content .main .markBox .button div a{
+    font-size: 16px;
+    color: #fff;
+}
+
+/*加载动画*/
+.loadingBox{
+    position: absolute;
+    top:100px;
+    left: 50%;
+    margin-left: -250px;
+    width: 500px;
+    height: 300px;
+    padding: 40px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 4px 4px 4px 4px rgba(0,0,0,0.4);
+    color: #333;
+    font-size: 20px;
+    animation: fade 0.00001s 3s forwards ;
+}
+@keyframes fade{
+    0%{opacity: 1;}
+    0.000001%{opacity: 0;}
+    100%{top:-2000px;}
+}
+#loading {
+	width:200px;
+	height:100px;
+	margin: 50px auto;
+}
+
+#loading span {
+	height:80px;
+	width:15px;
+	background:#6e75ef;
+	display:inline-block;
+	animation:loader 1s 5;
+}
+#loading p {
+  color: #6e75ef;
+  font-size: 20px;
+  font-family: Helvetica;
+  text-transform: uppercase;
+  margin-top: 5px;
+  font-weight: 300;
+  letter-spacing: .05em;
+  text-align: center;
+}
+@keyframes loader{
+	50% { height:30px; margin-top:50px; opacity:.5; }
+}
+
+#loading span:nth-child(1) {animation-delay:.1s;}
+#loading span:nth-child(2) {animation-delay:.2s;}
+#loading span:nth-child(3) {animation-delay:.3s;}
+#loading span:nth-child(4) {animation-delay:.4s;}
+#loading span:nth-child(5) {animation-delay:.5s;}
+#loading span:nth-child(6) {animation-delay:.6s;}

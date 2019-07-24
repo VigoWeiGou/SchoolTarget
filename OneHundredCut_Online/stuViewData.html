@@ -1,0 +1,251 @@
+<!--
+	作者：136993561@qq.com
+	时间：2019-05-26
+	描述：
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>学生成绩分析</title>
+    <link rel="stylesheet" type="text/css" href="css/stuViewData.css"/> 
+    <script src="https://code.highcharts.com.cn/highcharts/highcharts.js"></script>
+    <script src="https://code.highcharts.com.cn/highcharts/modules/exporting.js"></script>
+    <script src="https://img.hcharts.cn/highcharts-plugins/highcharts-zh_CN.js"></script>
+    <script type="text/javascript" src="js/viewData_1.js"></script>
+    <script src="https://code.highcharts.com.cn/highcharts/modules/oldie.js"></script>
+    <script src="https://code.highcharts.com.cn/highcharts/modules/series-label.js"></script>
+</head>
+<body>
+	<div class="all">
+    <!--页面头部-->
+    <div class="header">
+			<div class="img left">
+				<img src="imgs/logo.png" width=100px />
+			</div>
+			<div class="manus left">
+				<ul>
+					<li>
+						<a   href="subjectManu.html">
+							课程
+						</a>
+					</li>
+					<li>
+						<a href="studentQue.html">
+							在线考试
+						</a>
+					</li>
+					<li>
+						<a class="now" href="#">
+							成绩评估及查询
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							答题记录
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							收藏夹
+						</a>
+					</li>                               
+					<li>
+						<form>
+							<select id="selection">
+								<option value="sub">
+									课程
+								</option>
+								<option value="test">
+									试题
+								</option>
+							</select>
+						</form>
+					</li>
+					<li>
+						<input type="text" name="search" placeholder="搜索..."/>
+					</li>
+				</ul>
+			</div>
+			<div class="head">
+				<div class="img right">
+					<img src="imgs/default.png" width="30px"/>
+				</div>
+				<div class="number right">204******418</div>
+				<div class="manu">
+					<ul>
+						<li><a href="#">我的题库</a></li>
+						<li><a href="logInStudent.html">切换账号</a></li>
+						<li><a href="logInStudent.html">退出</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!--主要内容-->
+    <div class="content">
+        <div class="main">
+            <div class="right inMain">
+				<div class="return">
+					<a href="marks.html">
+						返回试卷列表
+					</a>
+				</div>
+
+                <div class="tag">                  
+                    <div class="tag_3" id="cs">
+                    	<p>排名变化</p>
+                    </div>
+                    <div class="tag_2" id="bs">
+                    	<p>题目成绩</p>
+                    </div>
+                    <div class="tag_1" id="as">
+                    	<p>试卷</p>
+                    </div>        
+                </div>
+ <div class="paper_1" id="dg4">
+<div class="dj" id="dg1" style="display: block;"> <br  />
+	<div id="container_11" style="min-width:400px;height:400px"></div>
+	<script>
+		Highcharts.chart('container_11', {
+	chart: {
+		plotBackgroundColor: null,
+		plotBorderWidth: null,
+		plotShadow: false,
+		type: 'pie'
+	},
+	title: {
+		text: '试卷题型构成'
+	},
+	tooltip: {
+		pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+	},
+	plotOptions: {
+		pie: {
+			allowPointSelect: true,
+			cursor: 'pointer',
+			dataLabels: {
+				enabled: true,
+				format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+				style: {
+					color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+				}
+			}
+		}
+	},
+	series: [{
+		name: '题型',
+		colorByPoint: true,
+		data: [{
+			name: '选择题',
+			y: 30,
+			sliced: true,
+			selected: true
+		}, {
+			name: '填空题',
+			y: 20
+		}, {
+			name: '大题',
+			y: 50
+		}]
+	}]
+});
+	</script>
+ </div>
+<div class="dj" id="dg2" style="display: none;"> <br />
+     <div id="container_12" style="max-width:800px;height:400px"></div>
+        <script>
+            var chart = Highcharts.chart('container_12', {
+	title: {
+		text: '个人成绩统计'
+	},
+	subtitle: {
+		text: '数据来源：xxx考试'
+	},
+	yAxis: {
+		title: {
+			text: '分数'
+		}
+	},
+	legend: {
+		layout: 'vertical',
+		align: 'right',
+		verticalAlign: 'middle'
+	},
+	plotOptions: {
+		series: {
+			label: {
+				connectorAllowed: false
+			},
+			pointStart: 2017
+		}
+	},
+	series: [ {
+		name: '选择题',
+		data: [30, 32, 28, 30]
+	}, {
+		name: '填空题',
+		data: [10, 5, 15, 10]
+	}, {
+		name: '大题',
+		data: [32, 28, 30, 40]
+	}],
+	responsive: {
+		rules: [{
+			condition: {
+				maxWidth: 500
+			},
+			chartOptions: {
+				legend: {
+					layout: 'horizontal',
+					align: 'center',
+					verticalAlign: 'bottom'
+				}
+			}
+		}]
+	}
+});
+        </script>
+</div>
+<div class="dj" id="dg3" style="display: none;"> <br />
+      <div id="container_13" style="min-width:400px;height:400px"></div>
+      <script>
+     var chart = Highcharts.chart('container_13', {
+	chart: {
+		type: 'area'
+	},
+	title: {
+		text: '班级名次'
+	},
+	xAxis: {
+		categories: ['2018', '2019', '2020', '2021', '2022']
+	},
+	credits: {
+		enabled: false
+	},
+	series: [{
+		name: '竞争对手_1',
+		data: [5, 3, 4, 7, 2]
+	}, {
+		name: '竞争对手_2',
+		data: [2, -2, -3, 2, 1]
+	}, {
+		name: 'youself',
+		data: [3, 4, 4, -2, 5]
+	}]
+});
+      </script>
+</div>
+</div>
+
+
+            </div>
+        </div>
+    </div>
+   </div>
+   <div class="right_bar">
+   	<div></div>
+   </div>
+</body>
+</html> 

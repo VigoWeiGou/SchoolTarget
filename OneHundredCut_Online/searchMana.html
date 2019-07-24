@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>管理员基本资料管理和查询</title>
+    <link rel="stylesheet" type="text/css" href="teacherQue.css"/>
+    
+    <!-- javascript -->
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+	<script type="text/javascript" src="js/jquery.tools.min.js"></script>
+	<script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
+    <script>
+    window.onload = function(){
+	var students = document.getElementById("students");
+	var teacher = document.getElementById("teacher");
+	var allB = document.getElementsByClassName("delete");
+	for(var i=0;i < allB.length ; i++){
+		allB[i].onclick = function(){
+		var tr = this.parentNode.parentNode;
+		tr.parentNode.removeChild(tr);
+		}
+	}
+	var allX= document.getElementsByClassName("modify");
+	for(var i=0;i < allX.length ; i++){
+		allX[i].onclick = function(){
+		var ts = this.parentNode.parentNode;
+		if(this.innerHTML == "修改")
+			{
+				this.innerHTML = "保存";
+		   		ts.contentEditable="true";
+		   	}
+		else
+			{
+				this.innerHTML ="修改";
+				ts.contentEditable="false";
+			}
+		}
+	}
+}
+    </script>
+<style>
+
+table{
+	border: #CCC solid 1px;
+	width:100%;
+	text-align:center;
+	}
+td{
+	line-height:30px;
+}
+.students-nav,.teacher-nav{
+	font-weight:800;
+	text-align:center;
+	line-height:50px;
+}
+.modify{
+	border-radius:5px;
+	background-color:rgb(113, 103, 255);
+	border:rgb(78, 66, 253) solid 1px;
+	width:50px;
+	color:#FFF;
+	cursor: pointer;
+}
+.delete{
+	border-radius:5px;
+	background-color:#fff;
+	border:rgb(255, 102, 102) solid 1px;
+	width:50px;
+	cursor: pointer;
+	}
+</style>
+
+</head>
+<body>
+
+	<script type="text/javascript">
+	
+		$(function() {
+			
+			var indicator = $('#indicator'),
+					indicatorHalfWidth = indicator.width()/2,
+					lis = $('#tabs').children('li');
+
+			$("#tabs").tabs("#content section", {
+				effect: 'fade',
+				fadeOutSpeed: 0,
+				fadeInSpeed: 400,
+				onBeforeClick: function(event, index) {
+					var li = lis.eq(index),
+					    newPos = li.position().left + (li.width()/2) - indicatorHalfWidth+35;
+					indicator.stop(true).animate({ left: newPos }, 600, 'easeInOutExpo');
+				}
+			});	
+
+		});
+
+	</script>
+
+
+    <!--页面头部-->
+    <div class="header">
+        <div class="img left">
+            <img src="imgs/logo.png" width=100px />
+        </div>
+        <div class="manus left">
+            <ul>
+                <li>
+                    <a href="teacherQue.html">
+                        题库管理
+                    </a>
+                </li>
+                <li>
+                    <a href="marksMana.html">
+                        成绩管理
+                    </a>
+                </li>
+                <li>
+                    <a  class="now" href="#">
+                        基本资料管理和查询
+                    </a>
+                </li>
+                
+				<li>
+                    <form>
+                        <select id="selection">
+                            <option value="sub">
+                                课程
+							</option>
+							<option value="sub">
+                                试题
+							</option>
+							<option value="sub">
+                                学生数据
+                            </option>
+                            <option value="test">
+                                教师数据
+                            </option>
+                        </select>
+                    </form>
+                </li>
+                <li>
+                    <input type="text" name="search" placeholder="搜索..."/>
+				</li>
+
+            </ul>
+        </div>
+        <div class="head">
+            <div class="img right">
+                <img src="imgs/default.png" width="30px"/>
+            </div>
+            <div class="number right">欢迎管理员007</div>
+            <div class="manu">
+                <ul>
+                    <li><a href="#">我的题库</a></li>
+                    <li><a href="C:\Users\apple\Desktop\一体化作业-在线做题网站\logInTeacher.html">切换账号</a></li>
+                    <li><a href="C:\Users\apple\Desktop\一体化作业-在线做题网站\logInTeacher.html">退出</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--灰色部分-->
+    <div class="content">
+        <!--主要内容部分-->
+        <div class="main">
+	        <nav>		
+		        <ul id="tabs">
+			        <li><a class="current" href="#">学生数据</a></li>
+			        <li><a href="#">教师数据</a></li>
+                
+                    <span>添入数据</span>
+		        </ul>
+		        <span id="indicator"></span>
+            </nav>
+            <div id="content">
+                <section>
+                    <ul>
+                       <table id="students">
+						<tr class="students-nav">
+							<td class="schoolid">学号</td>
+							<td class="name">姓名</td>
+							<td class="margen">性别</td>
+							<td class="class">班级</td>
+							<td class="idcard">身份证号</td>
+							<td class="phone">联系方式</td>
+							<td class="email">邮箱</td>
+							<td class="do">操作</td>
+						</tr>
+						<tr contenteditable="flase" >
+							<td class="schoolid">2018012383</td>
+							<td class="name">段凤熙</td>
+							<td class="margen">女</td>
+							<td class="class">18软件一班</td>
+							<td class="idcard">51070322222222222</td>
+							<td class="phone">19981763667</td>
+							<td class="email">hhhhh222@nenu.edu.cn</td>
+							<td class="do">
+								<button class="modify">修改</button>
+								<button class="delete">删除</button>
+							</td>
+						</tr>
+                        <tr contenteditable="flase" >
+							<td class="schoolid">2018010283</td>
+							<td class="name">杨泽宇</td>
+							<td class="margen">男</td>
+							<td class="class">18软件一班</td>
+							<td class="idcard">51070322222222222</td>
+							<td class="phone">19981763667</td>
+							<td class="email">hhhhh222@nenu.edu.cn</td>
+							<td class="do">
+								<button class="modify">修改</button>
+								<button class="delete">删除</button>
+							</td>
+						</tr>
+                        <tr contenteditable="flase" >
+							<td class="schoolid">2018010283</td>
+							<td class="name">杜辉廉</td>
+							<td class="margen">男</td>
+							<td class="class">18软件一班</td>
+							<td class="idcard">22220322222222222</td>
+							<td class="phone">195461765465</td>
+							<td class="email">hh4h222@nenu.edu.cn</td>
+							<td class="do">
+								<button class="modify">修改</button>
+								<button class="delete">删除</button>
+							</td>
+						</tr>
+                        <tr contenteditable="flase" >
+							<td class="schoolid">2018010283</td>
+							<td class="name">李浩文</td>
+							<td class="margen">男</td>
+							<td class="class">18软件一班</td>
+							<td class="idcard">51070322222222222</td>
+							<td class="phone">199812345677</td>
+							<td class="email">hh12322@nenu.edu.cn</td>
+							<td class="do">
+								<button class="modify">修改</button>
+								<button class="delete">删除</button>
+							</td>
+						</tr>
+                        <tr contenteditable="flase" >
+							<td class="schoolid">2018010284</td>
+							<td class="name">唐伟嘉</td>
+							<td class="margen">男</td>
+							<td class="class">18软件一班</td>
+							<td class="idcard">51070322222222222</td>
+							<td class="phone">215052527</td>
+							<td class="email">h88hhh222@nenu.edu.cn</td>
+							<td class="do">
+								<button class="modify">修改</button>
+								<button class="delete">删除</button>
+							</td>
+						</tr>
+						<tr contenteditable="flase" >
+								<td class="schoolid">2018012383</td>
+								<td class="name">段凤熙</td>
+								<td class="margen">女</td>
+								<td class="class">18软件一班</td>
+								<td class="idcard">51070322222222222</td>
+								<td class="phone">19981763667</td>
+								<td class="email">hhhhh222@nenu.edu.cn</td>
+								<td class="do">
+									<button class="modify">修改</button>
+									<button class="delete">删除</button>
+								</td>
+							</tr>
+							<tr contenteditable="flase" >
+								<td class="schoolid">2018010283</td>
+								<td class="name">杨泽宇</td>
+								<td class="margen">男</td>
+								<td class="class">18软件一班</td>
+								<td class="idcard">51070322222222222</td>
+								<td class="phone">19981763667</td>
+								<td class="email">hhhhh222@nenu.edu.cn</td>
+								<td class="do">
+									<button class="modify">修改</button>
+									<button class="delete">删除</button>
+								</td>
+							</tr>
+							<tr contenteditable="flase" >
+								<td class="schoolid">2018010283</td>
+								<td class="name">杜辉廉</td>
+								<td class="margen">男</td>
+								<td class="class">18软件一班</td>
+								<td class="idcard">22220322222222222</td>
+								<td class="phone">195461765465</td>
+								<td class="email">hh4h222@nenu.edu.cn</td>
+								<td class="do">
+									<button class="modify">修改</button>
+									<button class="delete">删除</button>
+								</td>
+							</tr>
+							<tr contenteditable="flase" >
+								<td class="schoolid">2018010283</td>
+								<td class="name">李浩文</td>
+								<td class="margen">男</td>
+								<td class="class">18软件一班</td>
+								<td class="idcard">51070322222222222</td>
+								<td class="phone">199812345677</td>
+								<td class="email">hh12322@nenu.edu.cn</td>
+								<td class="do">
+									<button class="modify">修改</button>
+									<button class="delete">删除</button>
+								</td>
+							</tr>
+							<tr contenteditable="flase" >
+								<td class="schoolid">2018010284</td>
+								<td class="name">唐伟嘉</td>
+								<td class="margen">男</td>
+								<td class="class">18软件一班</td>
+								<td class="idcard">51070322222222222</td>
+								<td class="phone">215052527</td>
+								<td class="email">h88hhh222@nenu.edu.cn</td>
+								<td class="do">
+									<button class="modify">修改</button>
+									<button class="delete">删除</button>
+								</td>
+							</tr>
+							<tr contenteditable="flase" >
+									<td class="schoolid">2018012383</td>
+									<td class="name">段凤熙</td>
+									<td class="margen">女</td>
+									<td class="class">18软件一班</td>
+									<td class="idcard">51070322222222222</td>
+									<td class="phone">19981763667</td>
+									<td class="email">hhhhh222@nenu.edu.cn</td>
+									<td class="do">
+										<button class="modify">修改</button>
+										<button class="delete">删除</button>
+									</td>
+								</tr>
+								<tr contenteditable="flase" >
+									<td class="schoolid">2018010283</td>
+									<td class="name">杨泽宇</td>
+									<td class="margen">男</td>
+									<td class="class">18软件一班</td>
+									<td class="idcard">51070322222222222</td>
+									<td class="phone">19981763667</td>
+									<td class="email">hhhhh222@nenu.edu.cn</td>
+									<td class="do">
+										<button class="modify">修改</button>
+										<button class="delete">删除</button>
+									</td>
+								</tr>
+								<tr contenteditable="flase" >
+									<td class="schoolid">2018010283</td>
+									<td class="name">杜辉廉</td>
+									<td class="margen">男</td>
+									<td class="class">18软件一班</td>
+									<td class="idcard">22220322222222222</td>
+									<td class="phone">195461765465</td>
+									<td class="email">hh4h222@nenu.edu.cn</td>
+									<td class="do">
+										<button class="modify">修改</button>
+										<button class="delete">删除</button>
+									</td>
+								</tr>
+								<tr contenteditable="flase" >
+									<td class="schoolid">2018010283</td>
+									<td class="name">李浩文</td>
+									<td class="margen">男</td>
+									<td class="class">18软件一班</td>
+									<td class="idcard">51070322222222222</td>
+									<td class="phone">199812345677</td>
+									<td class="email">hh12322@nenu.edu.cn</td>
+									<td class="do">
+										<button class="modify">修改</button>
+										<button class="delete">删除</button>
+									</td>
+								</tr>
+								<tr contenteditable="flase" >
+									<td class="schoolid">2018010284</td>
+									<td class="name">唐伟嘉</td>
+									<td class="margen">男</td>
+									<td class="class">18软件一班</td>
+									<td class="idcard">51070322222222222</td>
+									<td class="phone">215052527</td>
+									<td class="email">h88hhh222@nenu.edu.cn</td>
+									<td class="do">
+										<button class="modify">修改</button>
+										<button class="delete">删除</button>
+									</td>
+								</tr>
+						<tr contenteditable="flase" >
+							<td class="schoolid">2018012383</td>
+							<td class="name">段凤熙</td>
+							<td class="margen">女</td>
+							<td class="class">18软件一班</td>
+							<td class="idcard">51070322222222222</td>
+							<td class="phone">19981763667</td>
+							<td class="email">hhhhh222@nenu.edu.cn</td>
+							<td class="do">
+								<button class="modify">修改</button>
+								<button class="delete">删除</button>
+							</td>
+						</tr>
+                        <tr contenteditable="flase" >
+							<td class="schoolid">2018010283</td>
+							<td class="name">杨泽宇</td>
+							<td class="margen">男</td>
+							<td class="class">18软件一班</td>
+							<td class="idcard">51070322222222222</td>
+							<td class="phone">19981763667</td>
+							<td class="email">hhhhh222@nenu.edu.cn</td>
+							<td class="do">
+								<button class="modify">修改</button>
+								<button class="delete">删除</button>
+							</td>
+						</tr>
+                        <tr contenteditable="flase" >
+							<td class="schoolid">2018010283</td>
+							<td class="name">杜辉廉</td>
+							<td class="margen">男</td>
+							<td class="class">18软件一班</td>
+							<td class="idcard">22220322222222222</td>
+							<td class="phone">195461765465</td>
+							<td class="email">hh4h222@nenu.edu.cn</td>
+							<td class="do">
+								<button class="modify">修改</button>
+								<button class="delete">删除</button>
+							</td>
+						</tr>
+                        <tr contenteditable="flase" >
+							<td class="schoolid">2018010283</td>
+							<td class="name">李浩文</td>
+							<td class="margen">男</td>
+							<td class="class">18软件一班</td>
+							<td class="idcard">51070322222222222</td>
+							<td class="phone">199812345677</td>
+							<td class="email">hh12322@nenu.edu.cn</td>
+							<td class="do">
+								<button class="modify">修改</button>
+								<button class="delete">删除</button>
+							</td>
+						</tr>
+                        <tr contenteditable="flase" >
+							<td class="schoolid">2018010284</td>
+							<td class="name">唐伟嘉</td>
+							<td class="margen">男</td>
+							<td class="class">18软件一班</td>
+							<td class="idcard">51070322222222222</td>
+							<td class="phone">215052527</td>
+							<td class="email">h88hhh222@nenu.edu.cn</td>
+							<td class="do">
+								<button class="modify">修改</button>
+								<button class="delete">删除</button>
+							</td>
+						</tr>
+			
+					</table>       
+                    </ul>
+                </section>
+                <section>
+                    <div class="right1">
+					
+					<table id="teacher">
+						<tr class="teacher-nav">
+							<td class="schoolid">教工号</td>
+							<td class="name">姓名</td>
+							<td class="margen">性别</td>
+							<td class="class">年龄</td>
+							<td class="idcard">身份证号</td>
+							<td class="phone">联系方式</td>
+							<td class="email">邮箱</td>
+							<td class="do">操作</td>
+						</tr>
+						<tr>
+							<td class="schoolid">20180000000</td>
+							<td class="name">张老师</td>
+							<td class="margen">男</td>
+							<td class="class">30</td>
+							<td class="idcard">222222222222222222</td>
+							<td class="phone">12345678901</td>
+							<td class="email">hhhhh222@nenu.edu.cn</td>
+							<td class="do">
+							<button class="modify">修改</button>
+								<button class="delete">删除</button>
+								</td>
+						</tr>
+                        <tr>
+							<td class="schoolid">20180000000</td>
+							<td class="name">张老师</td>
+							<td class="margen">男</td>
+							<td class="class">30</td>
+							<td class="idcard">222222222222222222</td>
+							<td class="phone">12345678901</td>
+							<td class="email">hhhhh222@nenu.edu.cn</td>
+							<td class="do">
+							<button class="modify">修改</button>
+								<button class="delete">删除</button>
+								</td>
+						</tr>
+                        <tr>
+							<td class="schoolid">20180000000</td>
+							<td class="name">张老师</td>
+							<td class="margen">男</td>
+							<td class="class">30</td>
+							<td class="idcard">222222222222222222</td>
+							<td class="phone">12345678901</td>
+							<td class="email">hhhhh222@nenu.edu.cn</td>
+							<td class="do">
+							<button class="modify">修改</button>
+								<button class="delete">删除</button>
+								</td>
+						</tr>
+                        <tr>
+							<td class="schoolid">20180000000</td>
+							<td class="name">张老师</td>
+							<td class="margen">男</td>
+							<td class="class">30</td>
+							<td class="idcard">222222222222222222</td>
+							<td class="phone">12345678901</td>
+							<td class="email">hhhhh222@nenu.edu.cn</td>
+							<td class="do">
+							<button class="modify">修改</button>
+								<button class="delete">删除</button>
+								</td>
+						</tr>
+                        <tr>
+							<td class="schoolid">20180000000</td>
+							<td class="name">张老师</td>
+							<td class="margen">男</td>
+							<td class="class">30</td>
+							<td class="idcard">222222222222222222</td>
+							<td class="phone">12345678901</td>
+							<td class="email">hhhhh222@nenu.edu.cn</td>
+							<td class="do">
+							<button class="modify">修改</button>
+								<button class="delete">删除</button>
+								</td>
+						</tr>
+                        
+                        </table>
+                        </div>
+                </section>
+                
+            </div>
+        </div>
+        <div class="tag">
+            <ul>
+                <li>&lt;</li>
+                <li class="now">1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+                <li>5</li>
+                <li>&gt;</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
